@@ -9,3 +9,6 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+Commands	README.md	/^## Commands$/;"	s	chapter:Vault namespaces demo
+Tests	README.md	/^## Tests$/;"	s	chapter:Vault namespaces demo
+Vault namespaces demo	README.md	/^# Vault namespaces demo$/;"	c

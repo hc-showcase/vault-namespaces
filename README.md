@@ -1,0 +1,54 @@
+# Vault namespaces demo
+
+This demo is used to demonstrate Vault namespaces, identities, identity groups and policies.
+
+## Commands
+vault server -dev -dev-root-token-id root -dev-listen-address 0.0.0.0:9201
+
+export VAULT_TOKEN=root
+
+terraform init
+
+terraform apply
+
+export VAULT_TOKEN=
+
+vault login -namespace=education -method=userpass username="bob" password="training"
+
+## Tests
+mkaesz@arch ~/w/vault-namespaces (main)> vault namespace create -namespace=education test1
+Key     Value
+---     -----
+id      x2hb3
+path    education/test1/
+
+
+mkaesz@arch ~/w/vault-namespaces (main)> vault namespace create -namespace=education/test1 test2
+Error creating namespace: Error making API request.
+
+Namespace: education/test1/
+URL: PUT http://192.168.1.119:9201/v1/sys/namespaces/test2
+Code: 403. Errors:
+
+* 1 error occurred:
+	* permission denied
+
+
+mkaesz@arch ~/w/vault-namespaces (main) [2]> vault namespace create -namespace=education/training test3
+Key     Value
+---     -----
+id      g8wrN
+path    education/training/test3/
+
+
+mkaesz@arch ~/w/vault-namespaces (main)> vault namespace create -namespace=education/training/test3 test4
+Error creating namespace: Error making API request.
+
+Namespace: education/training/test3/
+URL: PUT http://192.168.1.119:9201/v1/sys/namespaces/test4
+Code: 403. Errors:
+
+* 1 error occurred:
+	* permission denied
+
+

@@ -23,8 +23,8 @@ path "sys/mounts" {
   capabilities = [ "read" ]
 }
 
-# Manage secrets at 'team-secret'
-path "team-secret/*" {
+# Manage secrets at 'kv'
+path "kv/*" {
    capabilities = ["create", "read", "update", "delete", "list"]
 }
 

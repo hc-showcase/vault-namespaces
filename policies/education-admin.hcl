@@ -33,8 +33,3 @@ path "auth/token/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
 }
 
-# Manage secrets at 'edu-secret'
-path "edu-secret/*" {
-   capabilities = ["create", "read", "update", "delete", "list"]
-}
-
