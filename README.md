@@ -16,6 +16,7 @@ export VAULT_TOKEN=
 vault login -namespace=education -method=userpass username="bob" password="training"
 
 ## Tests
+´´´
 mkaesz@arch ~/w/vault-namespaces (main)> vault namespace create -namespace=education test1
 Key     Value
 ---     -----
@@ -82,3 +83,5 @@ version            3
 Key     Value
 ---     -----
 blub    asd
+
+´´´
