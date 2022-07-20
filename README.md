@@ -51,4 +51,34 @@ Code: 403. Errors:
 * 1 error occurred:
 	* permission denied
 
+mkaesz@arch ~/w/vault-namespaces (main) [2]> vault kv put -ns=education/training kv/kv blub=asd
+== Secret Path ==
+kv/data/kv
 
+======= Metadata =======
+Key                Value
+---                -----
+created_time       2022-07-20T20:27:44.418075036Z
+custom_metadata    <nil>
+deletion_time      n/a
+destroyed          false
+version            3
+
+
+mkaesz@arch ~/w/vault-namespaces (main)> vault kv get -ns=education/training kv/kv
+== Secret Path ==
+kv/data/kv
+
+======= Metadata =======
+Key                Value
+---                -----
+created_time       2022-07-20T20:27:44.418075036Z
+custom_metadata    <nil>
+deletion_time      n/a
+destroyed          false
+version            3
+
+==== Data ====
+Key     Value
+---     -----
+blub    asd
