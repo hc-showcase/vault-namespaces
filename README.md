@@ -17,14 +17,14 @@ vault login -namespace=education -method=userpass username="bob" password="train
 
 ## Tests
 ```
-**$ vault namespace create -namespace=education test1**
+$ vault namespace create -namespace=education test1
 Key     Value
 ---     -----
 id      x2hb3
 path    education/test1/
 
 
-**$ vault namespace create -namespace=education/test1 test2**
+$ vault namespace create -namespace=education/test1 test2
 Error creating namespace: Error making API request.
 
 Namespace: education/test1/
