@@ -34,13 +34,13 @@ Code: 403. Errors:
 * 1 error occurred:
 	* permission denied
 
-**$ vault namespace create -namespace=education/training test3**
+$ vault namespace create -namespace=education/training test3
 Key     Value
 ---     -----
 id      g8wrN
 path    education/training/test3/
 
-**$ vault namespace create -namespace=education/training/test3 test4**
+$ vault namespace create -namespace=education/training/test3 test4
 Error creating namespace: Error making API request.
 
 Namespace: education/training/test3/
@@ -50,7 +50,7 @@ Code: 403. Errors:
 * 1 error occurred:
 	* permission denied
 
-**$ vault kv put -ns=education/training kv/kv blub=asd**
+$ vault kv put -ns=education/training kv/kv blub=asd
 == Secret Path ==
 kv/data/kv
 
@@ -64,7 +64,7 @@ destroyed          false
 version            3
 
 
-**$ vault kv get -ns=education/training kv/kv**
+$ vault kv get -ns=education/training kv/kv
 == Secret Path ==
 kv/data/kv
 
