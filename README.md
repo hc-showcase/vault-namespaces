@@ -3,6 +3,7 @@
 This demo is used to demonstrate Vault namespaces, identities, identity groups and policies.
 
 ## Commands
+```
 vault server -dev -dev-root-token-id root -dev-listen-address 0.0.0.0:9201
 
 export VAULT_TOKEN=root
@@ -14,6 +15,7 @@ terraform apply
 export VAULT_TOKEN=
 
 vault login -namespace=education -method=userpass username="bob" password="training"
+```
 
 ## Tests
 ```
