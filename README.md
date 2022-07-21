@@ -16,15 +16,15 @@ export VAULT_TOKEN=
 vault login -namespace=education -method=userpass username="bob" password="training"
 
 ## Tests
-
-mkaesz@arch ~/w/vault-namespaces (main)> vault namespace create -namespace=education test1
+```
+**$ vault namespace create -namespace=education test1**
 Key     Value
 ---     -----
 id      x2hb3
 path    education/test1/
 
 
-mkaesz@arch ~/w/vault-namespaces (main)> vault namespace create -namespace=education/test1 test2
+**$ vault namespace create -namespace=education/test1 test2**
 Error creating namespace: Error making API request.
 
 Namespace: education/test1/
@@ -34,15 +34,13 @@ Code: 403. Errors:
 * 1 error occurred:
 	* permission denied
 
-
-mkaesz@arch ~/w/vault-namespaces (main) [2]> vault namespace create -namespace=education/training test3
+**$ vault namespace create -namespace=education/training test3**
 Key     Value
 ---     -----
 id      g8wrN
 path    education/training/test3/
 
-
-mkaesz@arch ~/w/vault-namespaces (main)> vault namespace create -namespace=education/training/test3 test4
+**$ vault namespace create -namespace=education/training/test3 test4**
 Error creating namespace: Error making API request.
 
 Namespace: education/training/test3/
@@ -52,7 +50,7 @@ Code: 403. Errors:
 * 1 error occurred:
 	* permission denied
 
-mkaesz@arch ~/w/vault-namespaces (main) [2]> vault kv put -ns=education/training kv/kv blub=asd
+**$ vault kv put -ns=education/training kv/kv blub=asd**
 == Secret Path ==
 kv/data/kv
 
@@ -66,7 +64,7 @@ destroyed          false
 version            3
 
 
-mkaesz@arch ~/w/vault-namespaces (main)> vault kv get -ns=education/training kv/kv
+**$ vault kv get -ns=education/training kv/kv**
 == Secret Path ==
 kv/data/kv
 
